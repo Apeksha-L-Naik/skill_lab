@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+   <div class="calculator">
+    <div class="calci1">
+        <input id="display" type="text" >
+    </div>
+     <div class="calci2">
+       <input type="button" class="val" class="col" value="0" onclick="solve('0')">
+       <input type="button" class="val" class="col" value="1" onclick="solve('1')">
+       <input type="button" class="val" class="col" value="2" onclick="solve('2')">
+       <input type="button" class="val" class="col" value="3" onclick="solve('3')">
+     </div>
+     <div class="calci3">
+        <input type="button" class="val" value="4" onclick="solve('4')">
+        <input type="button" class="val" value="5" onclick="solve('5')">
+        <input type="button" class="val" value="6" onclick="solve('6')">
+        <input type="button" class="val" value="7" onclick="solve('7')">
+      </div>
+      <div class="calci4">
+        <input type="button" class="val" value="8" onclick="solve('8')">
+        <input type="button" class="val" value="9" onclick="solve('9')">
+        <input type="button" class="val" value="." onclick="solve('.')">
+        <input type="button" class="val" value="+" onclick="solve('+')">
+      </div>
+      <div class="calci5">
+        <input type="button" class="val" value="-" onclick="solve('-')">
+        <input type="button" class="val" value="*" onclick="solve('*')">
+        <input type="button" class="val" value="/" onclick="solve('/')">
+        <input type="button" class="val" value="=" onclick="Result()">
+      </div>
+      <div class="calci6">
+        <input type="button" value="clear" class="val1" onclick="clear()">
+        <input type="button" value="back" class="val1" onclick="Back()">
+      </div>
+   </div>
+   <script>
+    function solve(val){
+        var v = document.getElementById("display");
+        v.value+=val;
+    }
+    function Result(){
+        var num1 = document.getElementById("display").value;
+        var num2 = eval(num1);
+        document.getElementById("display").value=num2;
+    }
+    function clear(){
+        var inp = document.getElementById("display");
+        inp.value='';
+    }
+    function Back(){
+        var ev = document.getElementById("display");
+        ev.value=ev.value.slice(0,-1);
+    }
+   </script>
+</body>
+</html>
